@@ -7,7 +7,21 @@ import { useCartContext } from '../context/cart_context'
 import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
-  return <h4>cart buttons </h4>
+  // Aqui alem de usar styled componentes no Wrapper, ainda demos para ele uma className. Isso se dá pq lá no navbar tem uma funcionalidade específica para o mesmo, onde o mesmo fica invisível até ter uma largura mínima de tela
+  return <Wrapper className='cart-btn-wrapper'>
+    <Link to='/cart' className='cart-btn'>
+      Cart
+      <span className='cart-container'>
+        <FaShoppingCart />
+        <span className='cart-value'>
+          15
+        </span>
+      </span>
+    </Link>
+    <button className='auth-btn'>
+      Login <FaUserPlus />
+    </button>
+  </Wrapper>
 }
 
 const Wrapper = styled.div`
